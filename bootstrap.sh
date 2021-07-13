@@ -5,6 +5,9 @@
 #
 
 DOTFILES_HOME="${HOME}/.dotfiles"
+DOTFILES_ETC_HOME="${DOTFILES_HOME}/etc"
+DOTFILES_LIBS_HOME="${DOTFILES_HOME}/libs"
+DOTFILES_SCRIPTS_HOME="${DOTFILES_HOME}/scripts"
 
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_CACHE_HOME="${HOME}/.cache"
@@ -60,5 +63,7 @@ fi
 #
 # configure
 #
+
+source "${DOTFILES_SCRIPTS_HOME}/macos.sh"
 
 echo 'Done.'
