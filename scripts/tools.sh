@@ -14,3 +14,11 @@ if is_macos; then
 else
   show_na gnupg
 fi
+
+## karabiner-elements
+if is_macos; then
+  link_files "${DOTFILES_ETC_HOME}/karabiner" "${XDG_CONFIG_HOME}/karabiner"
+  show_ok karabiner-elements
+else
+  show_na karabiner-elements
+fi
