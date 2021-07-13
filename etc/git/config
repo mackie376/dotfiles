@@ -1,0 +1,19 @@
+[user]
+	name = Takashi Makimoto
+	email = mackie@beehive-dev.com
+	signingkey = 370FDB259ED32635
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[gpg]
+	program = gpg
+[tag]
+	forceSignAnnotated = true
+[ghq]
+	root = ~/.ghq
+	root = ~/.dotfiles
+	root = ~/Projects

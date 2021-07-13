@@ -47,6 +47,20 @@ function show_na() {
   show_status "$1" "N/A" "$(tput setaf 3)"
 }
 
+function link_files() {
+  local SRC_DIR="$1"
+  local TARGET_DIR="$2"
+
+  mkdir -p "$TARGET_DIR"
+
+  for filename in "$SRC_DIR"/*; do
+    local TARGET_PATH="${TARGET_DIR}/$(basename $filename)"
+    if [[ ! -e "$TARGET_PATH" ]]; then
+      ln -s "$filename" "$TARGET_PATH"
+    fi
+  done
+}
+
 #
 # install 'xcode command line tools' for macOS
 #
@@ -65,5 +79,6 @@ fi
 #
 
 source "${DOTFILES_SCRIPTS_HOME}/macos.sh"
+source "${DOTFILES_SCRIPTS_HOME}/tools.sh"
 
 echo 'Done.'
