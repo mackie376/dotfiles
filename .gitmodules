@@ -1,0 +1,6 @@
+[submodule "libs/tmux/load-avg"]
+	path = libs/tmux/load-avg
+	url = https://github.com/dastergon/tmux-load-avg.git
+[submodule "libs/tmux/public-ip"]
+	path = libs/tmux/public-ip
+	url = https://github.com/0xAF/tmux-public-ip.git

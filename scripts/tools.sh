@@ -22,3 +22,9 @@ if is_macos; then
 else
   show_na karabiner-elements
 fi
+
+## tmux
+if [[ ! -e "${HOME}/.tmux.conf" ]]; then
+  ln -s "${DOTFILES_ETC_HOME}/tmux/tmux.conf" "${HOME}/.tmux.conf"
+fi
+show_ok tmux
