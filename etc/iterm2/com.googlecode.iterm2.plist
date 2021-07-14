@@ -499,8 +499,6 @@
 				<key>Red Component</key>
 				<real>0.086274509803921567</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string>/Users/mackie/.dotfiles/pictures/wallpapers/beehive.jpg</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Badge Color</key>

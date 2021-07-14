@@ -1,0 +1,66 @@
+## 'dotfiles' direcotry
+export DOTFILES_HOME="${HOME}/.dotfiles"
+
+## editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+## color
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export ZLS_COLORS=$LS_COLORS
+
+## chpwd
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent_dirs_max     500
+zstyle ':chpwd:*' recent_dirs_default true
+zstyle ':chpwd:*' recent_dirs_files   "${ZDOTDIR}/.chpwd-recent-dirs"
+zstyle ':chpwd:*' recent_dirs_pushd   true
+
+## homebrew
+if [[ "$OSTYPE" == darwin* ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+## prezto
+if [[ -s "${DOTFILES_HOME}/libs/zsh/prezto/init.zsh" ]]; then
+  source "${DOTFILES_HOME}/libs/zsh/prezto/init.zsh"
+fi
+
+## anyenv
+export PATH="${HOME}/.anyenv/bin:$PATH"
+if (( $+commands[anyenv] )); then
+  eval "$(anyenv init -)"
+fi
+
+## fzf
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!*.git"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse'
+source "${HOME}/.config/fzf/fzf.zsh"
+
+## node (yarn)
+export PATH="${HOME}/.yarn/bin:$PATH"
+
+## aliases
+alias ll='ls -lhv'
+
+## functions
+source "${ZDOTDIR}/.functions.zsh"
+
+## key bindings
+bindkey -r       '^t'
+bindkey          '^@' fzf-cdr
+bindkey          '^g' fzf-ghq
+bindkey -M viins 'jk' vi-cmd-mode
+
+## powerlevel10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+if [[ -f "${ZDOTDIR}/.p10k.zsh" ]]; then
+  source "${ZDOTDIR}/.p10k.zsh"
+fi
+
+## post processing
+typeset -gU cdpath fpath mailpath path

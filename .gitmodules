@@ -4,3 +4,12 @@
 [submodule "libs/tmux/public-ip"]
 	path = libs/tmux/public-ip
 	url = https://github.com/0xAF/tmux-public-ip.git
+[submodule "libs/zsh/prezto"]
+	path = libs/zsh/prezto
+	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "libs/anyenv"]
+	path = libs/anyenv
+	url = https://github.com/anyenv/anyenv.git
+[submodule "libs/fzf"]
+	path = libs/fzf
+	url = https://github.com/junegunn/fzf.git
