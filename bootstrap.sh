@@ -79,6 +79,18 @@ if is_macos; then
 fi
 
 #
+# download 'dotfiles' repository
+#
+
+if [[ ! -e "$DOTFILES_HOME" ]]; then
+  git clone --recursive https://github.com/mackie376/dotfiles.git "$DOTFILES_HOME"
+fi
+if [[ ! -d "$DOTFILES_HOME" ]] || [[ ! -d "${DOTFILES_HOME}/.git" ]]; then
+  echo "$DOTFILES_HOME is not dotfiles repository"
+  exit 1
+fi
+
+#
 # configure
 #
 
