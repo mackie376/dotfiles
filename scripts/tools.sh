@@ -44,6 +44,14 @@ fi
 link_files "${DOTFILES_ETC_HOME}/neovim" "${XDG_CONFIG_HOME}/nvim"
 show_ok neovim
 
+## rofi
+if is_debian; then
+  link_files "${DOTFILES_ETC_HOME}/rofi" "${XDG_CONFIG_HOME}/rofi"
+  show_ok rofi
+else
+  show_na rofi
+fi
+
 ## tmux
 if [[ ! -e "${HOME}/.tmux.conf" ]]; then
   ln -s "${DOTFILES_ETC_HOME}/tmux/tmux.conf" "${HOME}/.tmux.conf"

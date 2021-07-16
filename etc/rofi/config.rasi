@@ -1,0 +1,15 @@
+configuration {
+  kb-mode-next: "Shift+Right,Control+i,Control+Tab";
+  kb-mode-previous: "Shift+Left,Control+Shift+i";
+  kb-cancel: "Escape,Control+c,Control+g,Control+bracketleft";
+  hide-scrollbar: true;
+  font: "HackGenNerd Console 12";
+  width: 30;
+  padding: 10;
+  lines: 20;
+  sidebar-mode: true;
+  color-window: "argb:ff161821, argb:ff3d425b, argb:ff3d425b";
+  color-normal: "argb:ff161821, argb:ffc6c8d1, argb:ff161821, argb:ff3d425b, argb:ffc6c8d1";
+  color-active: "argb:ff161821, argb:ffe4aa80, argb:ff161821, argb:ffe4aa80, argb:ff161821";
+  color-urgent: "argb:ff161821, argb:ffe27878, argb:ff161821, argb:ffe27878, argb:ffc6c8d1";
+}
