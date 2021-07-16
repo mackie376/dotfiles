@@ -43,6 +43,14 @@ if [[ ! -e "${HOME}/.tmux.conf" ]]; then
 fi
 show_ok tmux
 
+## xfce4-terminal
+if is_debian; then
+  link_files "${DOTFILES_ETC_HOME}/xfce4-terminal" "${XDG_CONFIG_HOME}/xfce4/terminal"
+  show_ok xfce4-terminal
+else
+  show_na xfce4-terminal
+fi
+
 ## zsh
 PATH=/opt/homebrew/bin:$PATH
 mkdir -p "${XDG_CONFIG_HOME}/zsh"

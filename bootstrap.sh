@@ -25,6 +25,10 @@ mkdir -p "${XDG_DATA_HOME}"
 # utils
 #
 
+function is_debian() {
+  [[ -e /etc/debian_version ]]
+}
+
 function is_macos() {
   [[ "$OSTYPE" == darwin* ]]
 }
