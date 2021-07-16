@@ -33,6 +33,10 @@ else
   show_na karabiner-elements
 fi
 
+## neovim
+link_files "${DOTFILES_ETC_HOME}/neovim" "${XDG_CONFIG_HOME}/nvim"
+show_ok neovim
+
 ## tmux
 if [[ ! -e "${HOME}/.tmux.conf" ]]; then
   ln -s "${DOTFILES_ETC_HOME}/tmux/tmux.conf" "${HOME}/.tmux.conf"
