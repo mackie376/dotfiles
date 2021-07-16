@@ -7,6 +7,13 @@ fi
 show_ok anyenv
 
 ## fzf
+if is_debian; then
+  if [[ ! -e /usr/local/bin/fzf ]]; then
+    "${DOTFILES_LIBS_HOME}/fzf/install" --bin
+    sudo mv "${DOTFILES_LIBS_HOME}/fzf/bin/fzf" /usr/local/bin
+    sudo chown root:root /usr/local/bin/fzf
+  fi
+fi
 link_files "${DOTFILES_ETC_HOME}/fzf" "${XDG_CONFIG_HOME}/fzf"
 show_ok fzf
 
