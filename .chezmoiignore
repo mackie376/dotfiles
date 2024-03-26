@@ -1,5 +1,6 @@
 README.md
 bootstrap.sh
+./images/
 
 {{- if ne .chezmoi.os "darwin" }}
 {{- end }}
