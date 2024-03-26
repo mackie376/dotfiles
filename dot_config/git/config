@@ -1,0 +1,26 @@
+[user]
+	name = Takashi Makimoto
+	email = mackie@beehive-dev.com
+	signingkey = 66B65D1B3C207818
+[alias]
+	tag = tag -s
+[commit]
+	verbose = true
+[ghq]
+	root = /Users/mackie/Projects
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[merge]
+	conflictStyle = diff3
+[tag]
+	forceSignAnnotated = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "github:"]
+	insteadOf = https://github.com/
+	pushInsteadOf = https://github.com/
