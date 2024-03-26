@@ -1,0 +1,10 @@
+README.md
+bootstrap.sh
+
+{{- if ne .chezmoi.os "darwin" }}
+{{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+{{- if ne .chezmoi.osRelease.id "debian" }}
+{{- end }}
+{{- end }}
