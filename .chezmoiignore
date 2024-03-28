@@ -3,6 +3,7 @@ bootstrap.sh
 ./images/
 
 {{- if ne .chezmoi.os "darwin" }}
+configure_macos.sh
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
