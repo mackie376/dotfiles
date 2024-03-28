@@ -24,10 +24,10 @@ mkdir -p "$PROJECTS_DIR"
 # --------------------------------------------------------------------------
 
 if [[ "$(uname -s)" =~ 'Linux' ]]; then
-  if ! which curl &> /dev/null; then
+  if ! which curl &>/dev/null; then
     sudo apt curl
   fi
-  if ! which git &> /dev/null; then
+  if ! which git &>/dev/null; then
     sudo apt git
   fi
 fi
@@ -35,9 +35,9 @@ fi
 # --------------------------------------------------------------------------
 
 if [[ "$(uname -s)" =~ 'Darwin' ]]; then
-  if ! xcode-select --print-path &> /dev/null; then
-    xcode-select --install &> /dev/null
-    until xcode-select --print-path &> /dev/null; do
+  if ! xcode-select --print-path &>/dev/null; then
+    xcode-select --install &>/dev/null
+    until xcode-select --print-path &>/dev/null; do
       sleep 5
     done
   fi
@@ -61,8 +61,7 @@ export PATH="$XDG_BIN_HOME:$PATH"
 
 # --------------------------------------------------------------------------
 
-chezmoi apply
-mise install -y
+chezmoi init --apply mackie376
 
 # --------------------------------------------------------------------------
 
