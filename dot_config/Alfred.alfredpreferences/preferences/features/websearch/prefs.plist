@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>4525158F-C8A2-4DFC-AF6A-2FB2C9FFA310</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>qiita</string>
+			<key>text</key>
+			<string>Search Qiita for '{query}'</string>
+			<key>url</key>
+			<string>https://qiita.com/search?q={query}</string>
+		</dict>
+		<key>EF5CF5D6-F939-49DE-8D23-11BEECB6FE45</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>weblio</string>
+			<key>text</key>
+			<string>Search Weblio for '{query}'</string>
+			<key>url</key>
+			<string>https://ejje.weblio.jp/content/{query}</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
