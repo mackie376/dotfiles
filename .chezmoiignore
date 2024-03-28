@@ -6,6 +6,8 @@ bootstrap.sh
 configure_macos.sh
 install_with_homebrew.sh
 .config/karabiner/
+.config/skhd/
+.config/yabai/
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
