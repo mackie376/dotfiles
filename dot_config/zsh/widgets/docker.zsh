@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if (( ! ${+commands[podman]} )); then
+if (( ! ${+commands[docker]} )); then
   return 1
 fi
 
