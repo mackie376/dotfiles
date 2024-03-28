@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+if [[ "$#" -ne 1 ]]; then
+  echo "$0 <project name>"
+  return 1
+elif [[ "$1" == "dotfiles" ]]; then
+  fzf-preview-git "${XDG_DATA_HOME}/chezmoi"
+else
+  fzf-preview-git "${(q)$(ghq root)}/$1"
+fi

@@ -1,0 +1,16 @@
+zmodule environment
+zmodule input
+zmodule utility
+zmodule duration-info
+zmodule git-info
+zmodule exa
+zmodule archive
+zmodule fzf
+zmodule joke/zim-github-cli
+zmodule joke/zim-mise
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
+zmodule joke/zim-starship
