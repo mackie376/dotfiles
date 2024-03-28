@@ -4,6 +4,7 @@ bootstrap.sh
 
 {{- if ne .chezmoi.os "darwin" }}
 configure_macos.sh
+install_with_homebrew.sh
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
