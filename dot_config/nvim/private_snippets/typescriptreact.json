@@ -1,0 +1,15 @@
+{
+  "example": {
+    "prefix": "react",
+    "body": [
+      "$0const $1 = () => (",
+      "\t<div>",
+      "\t\t<div>$1</div>",
+      "\t</div>",
+      ")",
+      "",
+      "export default $1;"
+    ],
+    "description": "signature"
+  }
+}
