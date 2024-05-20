@@ -1,0 +1,26 @@
+disableStartupPopups: true
+notARepository: skip
+promptToReturnFromSubprocess: false
+quitOnTopLevelReturn: true
+
+git:
+  autoFetch: false
+  disableForcePushing: true
+  parseEmoji: true
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+  log:
+    showGraph: always
+
+gui:
+  showRandomTip: false
+  showIcons: true
+
+keybinding:
+  commits:
+    viewResetOptions: G
+
+os:
+  edit: 'nvim'
+  editAtLine: '{{editor}} +{{line}} -- {{filename}}'
