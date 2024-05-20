@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+mkdir -p "${HOME}/.cache/zsh"
+:> .hushlogin
+
+ZSH_PATH="$(which zsh)"
+
+if [[ -n "$ZSH_PATH" ]]; then
+  if ! grep "$ZSH_PATH" -rl /etc/shells &> /dev/null; then
+    echo "$ZSH_PATH" | sudo tee -a /etc/shells &> /dev/null
+  fi
+fi

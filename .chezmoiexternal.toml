@@ -1,0 +1,8 @@
+[".local/share/tmux/tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm.git"
+ref = "master"
+
+[".local/share/zsh/zim/zimfw.zsh"]
+type = "file"
+url = "https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh"
