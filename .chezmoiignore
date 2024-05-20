@@ -8,6 +8,7 @@ bootstrap.sh
 
 {{- if ne $osid "darwin" }}
 configure_macos.sh
+install_with_homebrew.sh
 {{- else if (and (ne $osid "linux-debian") (ne $osid "linux-ubuntu")) }}
 install_with_apt.sh
 {{- end }}

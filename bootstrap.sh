@@ -38,6 +38,21 @@ fi
 
 # --------------------------------------------------------------------------
 
+if [[ "$KERNEL_NAME" =~ 'Darwin' ]]; then
+  if ! xcode-select --print-path &>/dev/null; then
+    xcode-select --install &>/dev/null
+    until xcode-select --print-path &>/dev/null; do
+      sleep 5
+    done
+  fi
+  if [[ ! -x /opt/homebrew/bin/brew ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# --------------------------------------------------------------------------
+
 if [[ ! -x "${XDG_BIN_HOME}/chezmoi" ]]; then
   sh -c "$(curl -fsSL get.chezmoi.io)" -- -b "$XDG_BIN_HOME"
 fi
