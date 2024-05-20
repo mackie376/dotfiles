@@ -68,6 +68,36 @@ zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "${XDG_DATA_HOME}/zsh/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
+{{- if ne .chezmoi.os "darwin" }}
+
+# -- configure 'Homebrew' --------------------------------------------------
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+path=(
+  "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin"(N-/)
+  "${HOMEBREW_PREFIX}/opt/ed/libexec/gnubin"(N-/)
+  "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin"(N-/)
+  "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin"(N-/)
+  "${HOMEBREW_PREFIX}/opt/gnu-tar/libexec/gnubin"(N-/)
+  "${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin"(N-/)
+  $path
+)
+fpath=(
+  "${HOMEBREW_PREFIX}/share/zsh/site-functions"
+$fpath
+)
+manpath=(
+  "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnuman"(N-/)
+  "${HOMEBREW_PREFIX}/opt/ed/libexec/gnuman"(N-/)
+  "${HOMEBREW_PREFIX}/opt/findutils/libexec/gnuman"(N-/)
+  "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnuman"(N-/)
+  "${HOMEBREW_PREFIX}/opt/gnu-tar/libexec/gnuman"(N-/)
+  "${HOMEBREW_PREFIX}/opt/grep/libexec/gnuman"(N-/)
+  $manpath
+)
+
+{{- end }}
+
 # -- configure 'Zim' -------------------------------------------------------
 
 export ZIM_HOME="${XDG_DATA_HOME}/zsh/zim"

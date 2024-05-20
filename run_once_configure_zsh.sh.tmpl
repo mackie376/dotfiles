@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
 mkdir -p "${HOME}/.cache/zsh"
-:> .hushlogin
+
+{{- if eq .chezmoi.os "darwin" }}
+
+ZSH_PATH=/opt/homebrew/bin/zsh
+
+{{- else if eq .chezmoi.os "linux" }}
 
 ZSH_PATH="$(which zsh)"
+
+{{- end }}
 
 if [[ -n "$ZSH_PATH" ]]; then
   if ! grep "$ZSH_PATH" -rl /etc/shells &> /dev/null; then
