@@ -10,6 +10,8 @@ bootstrap.sh
 configure_macos.sh
 install_with_homebrew.sh
 .config/karabiner/
+.config/skhd/
+.config/yabai/
 {{- else if (and (ne $osid "linux-debian") (ne $osid "linux-ubuntu")) }}
 install_with_apt.sh
 {{- end }}
