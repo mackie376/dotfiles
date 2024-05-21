@@ -68,7 +68,7 @@ zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "${XDG_DATA_HOME}/zsh/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
-{{- if ne .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
 
 # -- configure 'Homebrew' --------------------------------------------------
 
@@ -95,7 +95,6 @@ manpath=(
   "${HOMEBREW_PREFIX}/opt/grep/libexec/gnuman"(N-/)
   $manpath
 )
-
 {{- end }}
 
 # -- configure 'Zim' -------------------------------------------------------
