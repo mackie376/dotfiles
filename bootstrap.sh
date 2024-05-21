@@ -28,10 +28,10 @@ KERNEL_NAME="$(uname -s)"
 # --------------------------------------------------------------------------
 
 if [[ "$KERNEL_NAME" =~ 'Linux' ]]; then
-  if ! which curl &> /dev/null; then
+  if ! which curl &>/dev/null; then
     sudo apt install -y curl
   fi
-  if ! which git &> /dev/null; then
+  if ! which git &>/dev/null; then
     sudo apt install -y git
   fi
 fi
@@ -62,6 +62,10 @@ if [[ ! -x "${XDG_BIN_HOME}/mise" ]]; then
 fi
 
 export PATH="$XDG_BIN_HOME:$PATH"
+
+# --------------------------------------------------------------------------
+
+chezmoi init --apply mackie376
 
 # --------------------------------------------------------------------------
 
