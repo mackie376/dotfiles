@@ -1,5 +1,6 @@
 README.md
 bootstrap.sh
+images/
 
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
@@ -13,6 +14,7 @@ install_with_homebrew.sh
 .config/karabiner/
 .config/skhd/
 .config/yabai/
+Library/
 {{- else if (and (ne $osid "linux-debian") (ne $osid "linux-ubuntu")) }}
 install_with_apt.sh
 {{- end }}
