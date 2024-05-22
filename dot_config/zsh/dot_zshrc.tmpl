@@ -68,10 +68,8 @@ zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-file "${XDG_DATA_HOME}/zsh/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
-{{- if eq .chezmoi.os "darwin" }}
-
 # -- configure 'Homebrew' --------------------------------------------------
-
+{{ if eq .chezmoi.os "darwin" }}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 path=(
   "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin"(N-/)
@@ -110,6 +108,13 @@ source "${ZIM_HOME}/init.zsh"
 ## auto suggestion
 ZSH_AUTOSUGGEST_MANUAL_REBLEND=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666"
+
+# -- configure 'rootless docker' -------------------------------------------
+{{ if eq .chezmoi.os "linux" }}
+if (( ${+commands[docker]} )); then
+  export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/docker.sock"
+fi
+{{- end}}
 
 # -- load 'widgets' --------------------------------------------------------
 
