@@ -3,7 +3,6 @@
 brew update
 brew bundle --no-lock --file=/dev/stdin <<EOF
   tap "homebrew/bundle"
-  tap "homebrew/cask-fonts"
   tap "koekeishiya/formulae"
   brew "webp"
   brew "bat"
@@ -70,6 +69,7 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
   cask "alfred"
   cask "alt-tab"
   cask "anydesk"
+  cask "arc"
   cask "aquaskk"
   cask "firefox"
   cask "font-hackgen"
