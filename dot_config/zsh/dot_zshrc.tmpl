@@ -109,12 +109,12 @@ source "${ZIM_HOME}/init.zsh"
 ZSH_AUTOSUGGEST_MANUAL_REBLEND=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666"
 
-# -- configure 'rootless docker' -------------------------------------------
-{{ if eq .chezmoi.os "linux" }}
-if (( ${+commands[docker]} )); then
-  export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/docker.sock"
-fi
-{{- end}}
+# # -- configure 'rootless docker' -------------------------------------------
+# {{ if eq .chezmoi.os "linux" }}
+# if (( ${+commands[docker]} )); then
+#   export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/docker.sock"
+# fi
+# {{- end }}
 
 # -- load 'widgets' --------------------------------------------------------
 
@@ -145,16 +145,12 @@ alias e="$EDITOR"
 # -- post processing -------------------------------------------------------
 
 ## tmux with ssh-agent
-AGENT="${HOME}/.ssh/agent"
-if [[ -S "SSH_AUTH_SOCK" ]]; then
-  case $SSH_AUTH_SOCK in
-    /tmp/*/agent.[0-9]*)
-      ln -snf "$SSH_AUTH_SOCK" "$AGENT"
-      export SSH_AUTH_SOCK="$AGENT"
-      ;;
-  esac
-elif [[ -S "$AGENT" ]]; then
-  export SSH_AUTH_SOCK="$AGENT"
+if [[ -z "${TMUX+x}" ]]; then
+  if [[ ! -S ~/.ssh/ssh_auth_sock ]] && [[ -S "$SSH_AUTH_SOCK" ]]; then
+    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+  fi
+else
+  export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 fi
 
 ## remove duplicate value
