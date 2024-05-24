@@ -1,0 +1,17 @@
+{
+  "signature": {
+    "prefix": "sign",
+    "body": ["Takashi Makimoto <mackie@beehive-dev.com>"],
+    "description": "signature"
+  },
+  "name": {
+    "prefix": "name",
+    "body": ["Takashi Makimoto"],
+    "description": "name"
+  },
+  "email": {
+    "prefix": "email",
+    "body": ["mackie@beehive-dev.com"],
+    "description": "email"
+  }
+}
