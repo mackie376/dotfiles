@@ -109,12 +109,12 @@ source "${ZIM_HOME}/init.zsh"
 ZSH_AUTOSUGGEST_MANUAL_REBLEND=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666"
 
-# # -- configure 'rootless docker' -------------------------------------------
-# {{ if eq .chezmoi.os "linux" }}
-# if (( ${+commands[docker]} )); then
-#   export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/docker.sock"
-# fi
-# {{- end }}
+# -- configure 'rootless docker' -------------------------------------------
+{{ if eq .chezmoi.os "linux" }}
+if (( ${+commands[docker]} )); then
+  export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/docker.sock"
+fi
+{{- end }}
 
 # -- load 'widgets' --------------------------------------------------------
 
